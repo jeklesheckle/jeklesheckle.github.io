@@ -3,7 +3,7 @@
 <head><meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>notebook2</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
+<title>notebook</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 
 
 
@@ -14648,7 +14648,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 <span class="n">schema_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">schema_parsed</span><span class="p">)</span>
 <span class="k">for</span> <span class="n">index</span><span class="p">,</span> <span class="n">table</span> <span class="ow">in</span> <span class="n">schema_df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">&quot;table_name&quot;</span><span class="p">):</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Table name: &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">index</span><span class="p">))</span>
-    <span class="c1">#print(table[&quot;column_name&quot;]) # use this line to see all cols in all tables</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">table</span><span class="p">[</span><span class="s2">&quot;column_name&quot;</span><span class="p">])</span> <span class="c1"># use this line to see all cols in all tables</span>
 </pre></div>
 
      </div>
@@ -14671,40 +14671,335 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
 <pre>Table name: api_key_usage
+0     account_id
+1    customer_id
+2        api_key
+3    usage_count
+4             ip
+5      timestamp
+Name: column_name, dtype: object
 Table name: api_keys
+6         account_id
+7            api_key
+8        customer_id
+9    subscription_id
+Name: column_name, dtype: object
 Table name: competitive_rank
+10    account_id
+11        rating
+Name: column_name, dtype: object
 Table name: cosmetics
+12             item_id
+13                name
+14              prefab
+15       creation_date
+16     image_inventory
+17          image_path
+18    item_description
+19           item_name
+20         item_rarity
+21      item_type_name
+22      used_by_heroes
+Name: column_name, dtype: object
 Table name: hero_ranking
+23    account_id
+24       hero_id
+25         score
+Name: column_name, dtype: object
 Table name: hero_search
+26      match_id
+27         teama
+28         teamb
+29      teamawin
+30    start_time
+Name: column_name, dtype: object
 Table name: heroes
+31                id
+32              name
+33    localized_name
+34      primary_attr
+35       attack_type
+36             roles
+37              legs
+Name: column_name, dtype: object
 Table name: items
+38                id
+39              name
+40              cost
+41       secret_shop
+42         side_shop
+43            recipe
+44    localized_name
+Name: column_name, dtype: object
 Table name: leaderboard_rank
+45    account_id
+46        rating
+Name: column_name, dtype: object
 Table name: leagues
+47    leagueid
+48      ticket
+49      banner
+50        tier
+51        name
+Name: column_name, dtype: object
 Table name: match_gcdata
+52       match_id
+53        cluster
+54    replay_salt
+55      series_id
+56    series_type
+Name: column_name, dtype: object
 Table name: match_logs
+57                  match_id
+58                      time
+59                      type
+60                      team
+61                      unit
+62                       key
+63                     value
+64                      slot
+65               player_slot
+66                   player1
+67                   player2
+68              attackerhero
+69                targethero
+70          attackerillusion
+71            targetillusion
+72                 inflictor
+73               gold_reason
+74                 xp_reason
+75                 valuename
+76                      gold
+77                        lh
+78                        xp
+79                         x
+80                         y
+81                         z
+82                entityleft
+83                   ehandle
+84                     stuns
+85                   hero_id
+86                life_state
+87                     level
+88                     kills
+89                    deaths
+90                   assists
+91                    denies
+92         attackername_slot
+93           targetname_slot
+94           sourcename_slot
+95     targetsourcename_slot
+96              player1_slot
+97              attackername
+98                targetname
+99                sourcename
+100         targetsourcename
+101               obs_placed
+102               sen_placed
+103           creeps_stacked
+104            camps_stacked
+105             rune_pickups
+Name: column_name, dtype: object
 Table name: match_patch
+106    match_id
+107       patch
+Name: column_name, dtype: object
 Table name: matches
+108                   match_id
+109              match_seq_num
+110                radiant_win
+111                 start_time
+112                   duration
+113       tower_status_radiant
+114          tower_status_dire
+115    barracks_status_radiant
+116       barracks_status_dire
+117                    cluster
+118           first_blood_time
+119                 lobby_type
+120              human_players
+121                   leagueid
+122             positive_votes
+123             negative_votes
+124                  game_mode
+125                     engine
+126                 picks_bans
+127            radiant_team_id
+128               dire_team_id
+129          radiant_team_name
+130             dire_team_name
+131      radiant_team_complete
+132         dire_team_complete
+133            radiant_captain
+134               dire_captain
+135                       chat
+136                 objectives
+137           radiant_gold_adv
+138             radiant_xp_adv
+139                 teamfights
+140                    version
+141                  cosmetics
+142              radiant_score
+143                 dire_score
+144              draft_timings
+145                  series_id
+146                series_type
+Name: column_name, dtype: object
 Table name: mmr_estimates
+147    account_id
+148      estimate
+Name: column_name, dtype: object
 Table name: notable_players
+149      account_id
+150            name
+151    country_code
+152    fantasy_role
+153         team_id
+154       team_name
+155        team_tag
+156       is_locked
+157          is_pro
+158    locked_until
+Name: column_name, dtype: object
 Table name: parsed_matches
+159    match_id
+Name: column_name, dtype: object
 Table name: picks_bans
+160    match_id
+161     is_pick
+162     hero_id
+163        team
+164         ord
+Name: column_name, dtype: object
 Table name: player_matches
+165          match_id
+166        account_id
+167       player_slot
+168           hero_id
+169            item_0
+            ...      
+247              dn_t
+248    connection_log
+249        backpack_3
+250      item_neutral
+251         net_worth
+Name: column_name, Length: 87, dtype: object
 Table name: player_ratings
+252               account_id
+253                 match_id
+254    solo_competitive_rank
+255         competitive_rank
+256                     time
+Name: column_name, dtype: object
 Table name: players
+257           account_id
+258              steamid
+259               avatar
+260         avatarmedium
+261           avatarfull
+262           profileurl
+263          personaname
+264           last_login
+265    full_history_time
+266               cheese
+267       fh_unavailable
+268       loccountrycode
+269      last_match_time
+270                 plus
+Name: column_name, dtype: object
 Table name: public_matches
+271         match_id
+272    match_seq_num
+273      radiant_win
+274       start_time
+275         duration
+276          avg_mmr
+277          num_mmr
+278       lobby_type
+279        game_mode
+280    avg_rank_tier
+281    num_rank_tier
+282          cluster
+Name: column_name, dtype: object
 Table name: public_player_matches
+283       match_id
+284    player_slot
+285        hero_id
+Name: column_name, dtype: object
 Table name: queue
+286                   id
+287                 type
+288            timestamp
+289             attempts
+290                 data
+291    next_attempt_time
+292             priority
+Name: column_name, dtype: object
 Table name: rank_tier
+293    account_id
+294        rating
+Name: column_name, dtype: object
 Table name: rank_tier_2019_1
+295    account_id
+296        rating
+Name: column_name, dtype: object
 Table name: scenarios
+297       hero_id
+298          item
+299          time
+300     lane_role
+301         games
+302          wins
+303    epoch_week
+Name: column_name, dtype: object
 Table name: solo_competitive_rank
+304    account_id
+305        rating
+Name: column_name, dtype: object
 Table name: subscriptions
+306      account_id
+307     customer_id
+308          amount
+309    active_until
+Name: column_name, dtype: object
 Table name: team_match
+310     team_id
+311    match_id
+312     radiant
+Name: column_name, dtype: object
 Table name: team_rating
+313            team_id
+314             rating
+315               wins
+316             losses
+317    last_match_time
+Name: column_name, dtype: object
 Table name: team_scenarios
+318      scenario
+319    is_radiant
+320        region
+321         games
+322          wins
+323    epoch_week
+Name: column_name, dtype: object
 Table name: teams
+324     team_id
+325        name
+326         tag
+327    logo_url
+Name: column_name, dtype: object
 Table name: user_usage
+328     account_id
+329             ip
+330    usage_count
+331      timestamp
+Name: column_name, dtype: object
 Table name: webhooks
+332          hook_id
+333       account_id
+334              url
+335    subscriptions
+Name: column_name, dtype: object
 </pre>
 </div>
 </div>
